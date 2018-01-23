@@ -129,7 +129,7 @@ namespace Ksu.Cis300.TextEditor
         }
 
         /// <summary>
-        /// Handles a Click event on the "With StringBuilder" event handler.
+        /// Handles a Click event on the "With StringBuilder" menu item.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
