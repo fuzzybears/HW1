@@ -32,12 +32,15 @@
             this.uxFile = new System.Windows.Forms.ToolStripMenuItem();
             this.uxOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.uxSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxDisplay = new System.Windows.Forms.TextBox();
-            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
-            this.uxSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.uxEncrypt = new System.Windows.Forms.ToolStripMenuItem();
             this.uxEncryptWithString = new System.Windows.Forms.ToolStripMenuItem();
             this.uxEncryptWithStringBuilder = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxDisplay = new System.Windows.Forms.TextBox();
+            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
+            this.uxSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxUndo = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +48,8 @@
             // 
             this.uxMenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uxFile,
-            this.uxEncrypt});
+            this.uxEncrypt,
+            this.editToolStripMenuItem});
             this.uxMenuBar.Location = new System.Drawing.Point(0, 0);
             this.uxMenuBar.Name = "uxMenuBar";
             this.uxMenuBar.Size = new System.Drawing.Size(556, 24);
@@ -64,29 +68,16 @@
             // uxOpen
             // 
             this.uxOpen.Name = "uxOpen";
-            this.uxOpen.Size = new System.Drawing.Size(152, 22);
+            this.uxOpen.Size = new System.Drawing.Size(132, 22);
             this.uxOpen.Text = "Open . . .";
             this.uxOpen.Click += new System.EventHandler(this.uxOpen_Click);
             // 
             // uxSaveAs
             // 
             this.uxSaveAs.Name = "uxSaveAs";
-            this.uxSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.uxSaveAs.Size = new System.Drawing.Size(132, 22);
             this.uxSaveAs.Text = "Save As . . .";
             this.uxSaveAs.Click += new System.EventHandler(this.uxSaveAs_Click);
-            // 
-            // uxDisplay
-            // 
-            this.uxDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uxDisplay.Location = new System.Drawing.Point(12, 27);
-            this.uxDisplay.MaxLength = 0;
-            this.uxDisplay.Multiline = true;
-            this.uxDisplay.Name = "uxDisplay";
-            this.uxDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.uxDisplay.Size = new System.Drawing.Size(532, 520);
-            this.uxDisplay.TabIndex = 1;
             // 
             // uxEncrypt
             // 
@@ -110,6 +101,47 @@
             this.uxEncryptWithStringBuilder.Size = new System.Drawing.Size(170, 22);
             this.uxEncryptWithStringBuilder.Text = "With StringBuilder";
             this.uxEncryptWithStringBuilder.Click += new System.EventHandler(this.uxEncryptWithStringBuilder_Click);
+            // 
+            // uxDisplay
+            // 
+            this.uxDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uxDisplay.Location = new System.Drawing.Point(12, 27);
+            this.uxDisplay.MaxLength = 0;
+            this.uxDisplay.Multiline = true;
+            this.uxDisplay.Name = "uxDisplay";
+            this.uxDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.uxDisplay.Size = new System.Drawing.Size(532, 520);
+            this.uxDisplay.TabIndex = 1;
+            this.uxDisplay.TextChanged += new System.EventHandler(this.uxDisplay_TextChanged);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uxUndo,
+            this.uxRedo});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // uxUndo
+            // 
+            this.uxUndo.Enabled = false;
+            this.uxUndo.Name = "uxUndo";
+            this.uxUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.uxUndo.Size = new System.Drawing.Size(152, 22);
+            this.uxUndo.Text = "Undo";
+            this.uxUndo.Click += new System.EventHandler(this.uxUndo_Click);
+            // 
+            // uxRedo
+            // 
+            this.uxRedo.Enabled = false;
+            this.uxRedo.Name = "uxRedo";
+            this.uxRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.uxRedo.Size = new System.Drawing.Size(152, 22);
+            this.uxRedo.Text = "Redo";
+            this.uxRedo.Click += new System.EventHandler(this.uxRedo_Click);
             // 
             // UserInterface
             // 
@@ -140,6 +172,9 @@
         private System.Windows.Forms.ToolStripMenuItem uxEncrypt;
         private System.Windows.Forms.ToolStripMenuItem uxEncryptWithString;
         private System.Windows.Forms.ToolStripMenuItem uxEncryptWithStringBuilder;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uxUndo;
+        private System.Windows.Forms.ToolStripMenuItem uxRedo;
     }
 }
 
